@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <title>App</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+  <link href="styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+  <section>
+    <div id="container" class="container-fluid container-sm">
+      <div class="card" style="margin: 1rem;">
+        <div class="card-header">
+          <h3>Binary to Decimal Converter</h3>
+        </div>
+        <div class="card-body">
+          <div id="calculator">
+            <form method="post" action="#">
+              <div class="form-group has-error">
+                <label for="inputBinary">Binary:</label>
+                <input type="text" min="0" class="form-control" id="inputBinary" inputmode="numeric" pattern="[0-1]*"
+                  maxlength="16" value="" onchange="updateBinary(this.value);" onKeyUp="updateBinary(this.value);"
+                  placeholder="Enter a binary value [0 or 1]" />
+                <small id="inputMillsHelp" class="form-text text-muted">Enter a value you want to convert</small>
+                <div class="invalid-feedback">
+                  Please provide a valid binary number [0 or 1].
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="outputConverted">Decimal:</label>
+                <input type="text" class="form-control" id="outputConverted" readonly placeholder=""
+                  onClick="this.select();" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div id="container" class="container-fluid container-sm">
+      <div class="card" style="margin: 1rem;">
+        <div class="card-body">
+          <h5 class="card-title">How to convert binary to decimal</h5>
+          <p class="card-text">For a binary number b with n digits:
+          </p>
+          <p class="card-text">
+          <p>
+            <i>b<sub>n</sub>&nbsp;...&nbsp;b<sub>3</sub>&nbsp;b<sub>2</sub>&nbsp;b<sub>1</sub>&nbsp;b<sub>0</sub></i>
+          </p>
+          </p>
+          <p class="card-text">The value of any binary number will be equal to the sum of its digits multiplied by
+            their respective weights.</p>
+          <p>conversion = <i>b</i><sub>0</sub>&times;2<sup>0</sup> + <i>b</i><sub>1</sub>&times;2<sup>1</sup> +
+            <i>b</i><sub>2</sub>&times;2<sup>2</sup> + ... <i>b</i><sub>n</sub>&times;2<sup>n</sup></p>
+
+          <h5>Example</h5>
+          <p>Lets calculate decimal value of 100000<sub>2</sub>:</p>
+          <table class="table">
+            <tr>
+              <th>binary:</th>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>power of 2:</th>
+              <td>2<sup>5</sup></td>
+              <td>2<sup>4</sup></td>
+              <td>2<sup>3</sup></td>
+              <td>2<sup>2</sup></td>
+              <td>2<sup>1</sup></td>
+              <td>2<sup>0</sup></td>
+            </tr>
+          </table>
+          <pre>
+              <code>
+                <p ><b>Conversion </b> = 1&sdot;2<sup>5</sup>+0&sdot;2<sup>4</sup>+0&sdot;2<sup>3</sup>+0&sdot;2<sup>2</sup>+1&sdot;2<sup>1</sup>+1&sdot;2<sup>0</sup> = 32<sub>10</sub></p>
+              </code>
+            </pre>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <footer>
+    <small>
+      by Cris
+      <span role="img" aria-label="smile">😉</span>
+    </small>
+  </footer>
+
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
+
+</html>
